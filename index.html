@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kipacha Tech Solution | Innovative Technology Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kipacha Tech Solution</h1>
+        <p>Innovative Technology Services & Digital Solutions</p>
+    </header>
+
+    <nav class="nav-container">
+        <div class="navbar">
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section" id="about">
+            <h2>About Our Company</h2>
+            <div class="responsive-video">
+                <iframe width="670" height="377" src="https://www.youtube.com/embed/KRziZ_mkb68" title="Tech Solution For  Businesses" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <img src="images/tech.jpeg" 
+                 alt="Technology solutions" 
+                 class="styled-image">
+            <p>Kipacha Tech Solution is a leading provider of innovative digital solutions, offering cutting-edge technology services to businesses worldwide. Our team of experts specializes in delivering transformative tech solutions that drive growth and efficiency.</p>
+        </section>
+
+        <section class="section" id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Software Development</h3>
+                    <p>Custom enterprise solutions and application development</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cloud Solutions</h3>
+                    <p>Secure cloud migration and management services</p>
+                </div>
+                <div class="service-card">
+                    <h3>AI & ML Solutions</h3>
+                    <p>Advanced artificial intelligence implementations</p>
+                </div>
+                <div class="service-card">
+                    <h3>IT Consulting</h3>
+                    <p>Strategic technology planning and optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest:</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select service</option>
+                        <option value="software">Software Development</option>
+                        <option value="cloud">Cloud Solutions</option>
+                        <option value="ai">AI/ML Solutions</option>
+                        <option value="consulting">IT Consulting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Describe your project needs"></textarea>
+                </div>
+                <button type="submit">Send Inquiry</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-phone"></i> +255 789 012 345 | <i class="fas fa-envelope"></i> info@kipacha-tech.com | <i class="fas fa-map-marker-alt"></i> Nala-Dodoma, Tanzania</p>
+        <p>&copy; 2025 Kipacha Tech Solution. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you shortly.');
+            e.target.reset();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
